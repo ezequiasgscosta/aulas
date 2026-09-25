@@ -1,6 +1,18 @@
 'use client'
 
 export default function Calculadora () {
+   const n1 = 1
+   const n2 = 2
+   const n3 = 3
+   const n4 = 4
+   const n5 = 5
+   const n6 = 6
+   const n7 = 7
+   const n8 = 8
+   const n9 = 9
+   const primeiroN = 0
+   const segundoN = 0
+   const res = "."
 
 
    return (
@@ -11,9 +23,9 @@ export default function Calculadora () {
   <div className="flex flex-col border pb-6"> 
     <h1>Calculadora</h1> 
     <div className="flex border justify-end">
-      <h1>0</h1>
-      <h1></h1>
-       <h1>0</h1> 
+      <h1>{primeiroN}</h1>
+      <h1>{res}</h1>
+       <h1>{segundoN}</h1> 
     </div>
   </div>
 
@@ -21,7 +33,7 @@ export default function Calculadora () {
   <div className="flex mx-2  justify-center"> 
 
     <div className="border grid grid-cols-3 w-[60%] h-[500px]"> 
-      <button onClick={}>7</button> 
+      <button>7</button> 
       <button>8</button> 
       <button>9</button> 
       <button>4</button> 
