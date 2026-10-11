@@ -16,6 +16,7 @@ export default function Grud() {
     const [nomeEditando, setNomeEditando] = useState("");
     const [descricaoEditando, setDescricaoEditando] = useState("");
     const [prioridadeEditando, setPrioridadeEditando] = useState<Tarefas["prioridade"]>("media");
+    const [mostrarPopup, setMostrarPopup] = useState(false);
 
 
     const [ListaDeTarefas,setListaDeTarefas] = useState<Tarefas[]>( []);
@@ -34,6 +35,7 @@ export default function Grud() {
             if (carregou) {
                 localStorage.setItem("minhasTarefas", JSON.stringify(ListaDeTarefas));
             }
+            setMostrarPopup(true); 
         }, [ListaDeTarefas, carregou]);
 
 
@@ -174,6 +176,30 @@ export default function Grud() {
 
 
             </div>
+
+                {mostrarPopup && (
+    // Adicionei "bg-black/20" para dar uma leve tonalidade que ajuda o desfoque a se destacar
+    <div className="fixed inset-0 backdrop-blur bg-black/20 flex items-center justify-center z-50">
+        <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
+            <h2 className="text-xl font-bold mb-2 text-black">ATENÇÃO</h2>
+            <p className="text-gray-600 mb-4">
+                Este Grud <span className="text-black font-extrabold">NÃO</span> tem estilização. O foco é em <span className="text-black font-extrabold">TYPESCRIPT</span>
+            </p>
+            <p className="text-sm text-gray-500 mb-2">Adicione a TAREFA, A DESCRIÇÃO e a PRIORIDADE e clique em ADICIONAR para Adicionar uma nova tarefa</p>
+            <p className="text-sm text-gray-500 mb-2">Clique DUAS VEZES sobre a TAREFA para EXCLUIR</p>
+            <p className="text-sm text-gray-500 mb-4">Clique em EDITAR para alterar a TAREFA</p>
+            <button 
+                onClick={() => setMostrarPopup(false)} 
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+            >
+                Entendi
+            </button>
+        </div>
+    </div>
+)}
+
+
+
         </main>
     )
 }
