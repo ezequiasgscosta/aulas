@@ -19,7 +19,7 @@ interface ClimaData {
     speed: number;
   };
 }
-
+//
 export default function Home() {
   const [cidade, setCidade] = useState<string>('');
   const [clima, setClima] = useState<ClimaData | null>(null);
