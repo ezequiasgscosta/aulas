@@ -266,7 +266,9 @@ export default function Home() {
 const [concluidos, setConcluidos] = useState<number[]>([
   1, // Portfólio Pessoal
   2, // Gerenciador de Tarefas
+  3,//App de Clima
   4,//E-comerce
+  5,//DashBoard Financeiro
 ]);  const [aberto, setAberto] = useState<number | null>(1);
   const [busca, setBusca] = useState("");
   const [filtro, setFiltro] = useState("Todos");
